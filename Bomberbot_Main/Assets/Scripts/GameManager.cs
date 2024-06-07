@@ -1,0 +1,65 @@
+using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+
+public class GameManager : MonoBehaviour
+{
+
+    public static int roombaCount = 0, crateCount = 0, life = 5, score = 0, addedScore = 0;
+
+
+    public int startFromLevel = 1;
+
+    public static bool isPlaying;
+
+    static GameObject pauseMenu;
+    public static CanvasGroup canvasGroup;
+    public static AudioSource src;
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        
+
+        src = GetComponent<AudioSource>();
+
+        roombaCount = GameObject.FindGameObjectsWithTag("Enemy").Length;
+        crateCount = GameObject.FindGameObjectsWithTag("Crate").Length;
+        pauseMenu = GameObject.FindGameObjectWithTag("PauseMenu");
+        canvasGroup = pauseMenu.GetComponent<CanvasGroup>();
+
+
+        isPlaying = true;
+        
+
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+
+            if(isPlaying)
+            {
+                canvasGroup.alpha = 1;
+                canvasGroup.interactable = true;
+                isPlaying = false;
+            } else
+            {
+                canvasGroup.alpha = 0;
+                canvasGroup.interactable = false;
+                isPlaying = true;
+            }
+        }
+    }
+
+    public static void Reset()
+    {
+        life = 5;
+        addedScore = 0;
+        score = 0;
+    }
+
+    
+}
