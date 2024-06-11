@@ -107,7 +107,7 @@ public class bomb : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void LateUpdate()
     {   if(GameManager.isPlaying)
             rotationOfBomb.Rotate(rotationVector);
         

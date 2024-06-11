@@ -27,6 +27,10 @@ public class GameManager : MonoBehaviour
         crateCount = GameObject.FindGameObjectsWithTag("Crate").Length;
         pauseMenu = GameObject.FindGameObjectWithTag("PauseMenu");
         canvasGroup = pauseMenu.GetComponent<CanvasGroup>();
+        //canvasGroup.interactable = false;
+
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
 
 
         isPlaying = true;
@@ -35,18 +39,22 @@ public class GameManager : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void LateUpdate()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
 
             if(isPlaying)
             {
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
                 canvasGroup.alpha = 1;
                 canvasGroup.interactable = true;
                 isPlaying = false;
             } else
             {
+                Cursor.lockState = CursorLockMode.Locked;
+                Cursor.visible = false;
                 canvasGroup.alpha = 0;
                 canvasGroup.interactable = false;
                 isPlaying = true;

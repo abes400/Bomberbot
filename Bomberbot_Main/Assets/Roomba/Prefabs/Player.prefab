@@ -287,9 +287,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movector: {x: 0, y: 0, z: 0}
-  speed: 0.005
+  speed: 0.01
   step: 0
-  fullstep: 186
+  fullstep: 93
   randomTimeout: 100
 --- !u!136 &920101447
 CapsuleCollider:

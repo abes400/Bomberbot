@@ -15,7 +15,7 @@ public class OSDControl : MonoBehaviour
         DontDestroyOnLoad(GameObject.FindGameObjectWithTag("OSD"));
     }
 
-    public void Update()
+    public void LateUpdate()
     {
         OSDText.text = String.Format("{0}\t       {1}\n{2}\t       {3}",
                                       GameManager.life,

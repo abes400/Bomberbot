@@ -17,6 +17,8 @@ public class PauseMenu : MonoBehaviour
         GameManager.canvasGroup.alpha = 0;
         GameManager.canvasGroup.interactable = false;
         GameManager.isPlaying = true;
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 
     public void ResetLvl()

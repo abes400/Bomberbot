@@ -20,7 +20,7 @@ public class LifeControl : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void LateUpdate()
     {
         gameObject.transform.eulerAngles = new Vector3(rot.x, gameObject.transform.eulerAngles.y + rotateSpeed);
     }

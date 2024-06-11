@@ -118,10 +118,12 @@ public class move : MonoBehaviour
 
     public void Hurt()
     {
-        if(!alreadyHurt)
+       
+        if (!alreadyHurt)
         {
             GameManager.isPlaying = false;
             alreadyHurt = true;
+            
 
             if (GameManager.life <= 0) {
                 GameObject.FindGameObjectWithTag("Result").GetComponent<Result>().Show(Result.GAME_OVER);
@@ -135,6 +137,8 @@ public class move : MonoBehaviour
 
     private void Revive()
     {
+        step = 0;
+        motionizer.Move(new Vector3(0, 0, 0));
         transform.position = initPosition;
         alreadyHurt = false;
         GameObject.FindGameObjectWithTag("Result").GetComponent<Result>().Show(Result.TRY_AGAIN);
