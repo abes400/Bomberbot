@@ -25,6 +25,8 @@ public class MainMenu : MonoBehaviour
     {
         lastWidth = Screen.currentResolution.width * 3 / 2;
         lastHeight = Screen.currentResolution.height * 3 / 2;
+        Cursor.lockState = CursorLockMode.None;///////////////////////////////
+        Cursor.visible = true;////////////////////////////////////////////////
     }
 
     public void LoadGame()

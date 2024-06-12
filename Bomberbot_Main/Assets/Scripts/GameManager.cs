@@ -32,6 +32,9 @@ public class GameManager : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
 
+        UnityEngine.EventSystems.EventSystem.current.sendNavigationEvents =
+            !UnityEngine.EventSystems.EventSystem.current.sendNavigationEvents;/////////////////////////
+
 
         isPlaying = true;
         
