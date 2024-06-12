@@ -479,9 +479,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movector: {x: 0, y: 0, z: 0}
   src: {fileID: 0}
-  speed: 0.0425
+  speed: 0.085
   coeff: 1
-  fullstep: 22
+  fullstep: 11
   bomb: {fileID: 0}
   bombControl: {fileID: 0}
   force: 0
