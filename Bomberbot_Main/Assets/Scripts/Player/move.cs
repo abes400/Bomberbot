@@ -60,7 +60,7 @@ public class move : MonoBehaviour
                     transform.eulerAngles = new Vector3(0, rotateY, 0);
                     step = 0;
                     movector.x = 0;
-                    movector.z = speed;
+                    movector.z = speed * Time.deltaTime;
                     src.Play(); /////////////////////////////////////////////////////////////////////////////////////////////
             }
                 else if ((Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow)) && step == fullstep)
@@ -69,7 +69,7 @@ public class move : MonoBehaviour
                     transform.eulerAngles = new Vector3(0, rotateY, 0);
                     step = 0;
                     movector.x = 0;
-                    movector.z = -speed;
+                    movector.z = -speed * Time.deltaTime;
                     src.Play(); /////////////////////////////////////////////////////////////////////////////////////////////
             }
                 else if ((Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow)) && step == fullstep)
@@ -77,7 +77,7 @@ public class move : MonoBehaviour
                     rotateY = 180.0f;
                     transform.eulerAngles = new Vector3(0, rotateY, 0);
                     step = 0;
-                    movector.x = -speed;
+                    movector.x = -speed * Time.deltaTime;
                     movector.z = 0;
                     src.Play(); /////////////////////////////////////////////////////////////////////////////////////////////
             }
@@ -86,7 +86,7 @@ public class move : MonoBehaviour
                     step = 0;
                     rotateY = 0.0f;
                     transform.eulerAngles = new Vector3(0, rotateY, 0);
-                    movector.x = speed;
+                    movector.x = speed * Time.deltaTime;
                     movector.z = 0;
                     src.Play(); /////////////////////////////////////////////////////////////////////////////////////////////
                 
